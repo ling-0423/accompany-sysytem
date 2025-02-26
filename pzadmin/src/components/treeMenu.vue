@@ -48,4 +48,5 @@ const handleClick = (item, active) =>{
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

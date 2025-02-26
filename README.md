@@ -25,3 +25,6 @@ npm i less@4.2.0
 
 <!-- 图标 -->
 npm install @element-plus/icons-vue
+
+<!-- 状态的全局存储 -->
+npm install vuex@next

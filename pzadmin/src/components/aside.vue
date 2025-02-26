@@ -3,11 +3,12 @@
     <!-- 激活状态文本颜色、背景色、类名、默认激活项、文本颜色、监听 open 和 close 事件 -->
     <!-- 菜单组件 -->
     <el-menu 
-        :style="{width:'230px'}"
+        :style="{width:!isCollapse ? '230px' : '64px'}"
         active-text-color="#ffd04b" background-color="#545c64" class="aside-container" default-active="2"
-        text-color="#fff" @open="handleOpen" @close="handleClose">
+        text-color="#fff" @open="handleOpen" @close="handleClose"
+        :collapse="isCollapse">
 
-        <p class="logo-lg">ling陪诊</p>
+        <p class="logo-lg">{{!isCollapse ? 'ling陪诊' : 'ling'}}</p>
 
         <TreeMenu :menuData="menuData"/>
     </el-menu>
@@ -17,10 +18,16 @@
 <script setup>
 import TreeMenu from './treeMenu.vue'
 import {useRouter} from 'vue-router'
-import { reactive } from 'vue'
+import { reactive, computed } from 'vue'
+import { useStore } from 'vuex'
 
+// 获取当前的路由实例
 const router = useRouter()
 const menuData = reactive(router.options.routes[0].children)
+
+// 获取 Vuex 的 store 实例 store，用于全局状态管理
+const store = useStore()
+const isCollapse = computed(() => store.state.menu.isCollapse)
 
 // console.log(router, 'router')
 

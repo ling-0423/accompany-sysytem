@@ -5,7 +5,10 @@
 
       <Aside />
       <el-container>
-        <el-header>Header</el-header>
+        <!-- <el-header>Header</el-header> -->
+        <el-header>
+          <Header />
+        </el-header>
         <el-main>
           <RouterView />
         </el-main>
@@ -16,8 +19,9 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView } from 'vue-router'
 import Aside from '../components/aside.vue'
+import Header from '../components/navaHeader.vue'
 </script>
 
 <!-- 类似于css，scoped保证样式只影响当前组件 -->
