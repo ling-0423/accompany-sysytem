@@ -1,6 +1,5 @@
 <template>
-  <!-- 充当 路由占位符 -->
-  <RouterView />
+    <div>order</div>
 </template>
 
 
